@@ -298,18 +298,23 @@
         // Touch / Swipe support
         let touchStartX = 0;
         let touchStartY = 0;
+        let touchMaxDy = 0;
         let touchActive = false;
 
         document.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
+            touchMaxDy = 0;
             touchActive = true;
         }, { passive: true });
 
         document.addEventListener('touchmove', (e) => {
             if (!touchActive) return;
-            const dx = Math.abs(e.changedTouches[0].screenX - touchStartX);
-            const dy = Math.abs(e.changedTouches[0].screenY - touchStartY);
+            const cx = e.changedTouches[0].screenX;
+            const cy = e.changedTouches[0].screenY;
+            const dx = Math.abs(cx - touchStartX);
+            const dy = Math.abs(cy - touchStartY);
+            touchMaxDy = Math.max(touchMaxDy, dy);
             if (dx > dy && dx > 10) {
                 e.preventDefault();
             }
@@ -319,7 +324,9 @@
             if (!touchActive) return;
             touchActive = false;
             const diffX = touchStartX - e.changedTouches[0].screenX;
-            if (Math.abs(diffX) > SWIPE_THRESHOLD) {
+            // Only trigger swipe if horizontal distance exceeds threshold
+            // AND vertical movement wasn't dominant (prevents trigger after scroll)
+            if (Math.abs(diffX) > SWIPE_THRESHOLD && touchMaxDy < Math.abs(diffX) * 1.5) {
                 if (diffX > 0) goNext();
                 else goPrev();
             }
