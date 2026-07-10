@@ -1022,21 +1022,16 @@ body::after {
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     z-index: 100;
     font-family: var(--font-sans);
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--color-gold-light);
+    opacity: 0.7;
     pointer-events: none;
-    animation: swipe-fade 4s ease forwards;
-    animation-delay: 2s;
-}
-
-@keyframes swipe-fade {
-    0%, 60% { opacity: 1; }
-    100% { opacity: 0; }
+    text-shadow: 0 0 10px rgba(201, 169, 110, 0.2);
 }
 
 .swipe-arrow {
@@ -1272,7 +1267,7 @@ body::after {
 
     .pages-container {
         max-width: 92%;
-        height: 72vh;
+        height: 62vh;
         max-height: unset;
         padding: 0.5rem 0.8rem;
         margin: 0 auto;
@@ -1385,7 +1380,7 @@ body::after {
     }
 
     .pages-container {
-        height: 68vh;
+        height: 58vh;
     }
 
     .hero-title {
