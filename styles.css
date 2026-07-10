@@ -1017,13 +1017,13 @@ body::after {
    ============================================ */
 .swipe-hint {
     display: none;
-    position: absolute;
-    bottom: 0.5rem;
+    position: fixed;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
     gap: 0.5rem;
-    z-index: 20;
+    z-index: 100;
     font-family: var(--font-sans);
     font-size: 0.55rem;
     letter-spacing: 0.2em;
@@ -1272,7 +1272,7 @@ body::after {
 
     .pages-container {
         max-width: 92%;
-        height: 76vh;
+        height: 72vh;
         max-height: unset;
         padding: 0.5rem 0.8rem;
         margin: 0 auto;
@@ -1382,6 +1382,10 @@ body::after {
 
     .section-title {
         font-size: 0.65rem;
+    }
+
+    .pages-container {
+        height: 68vh;
     }
 
     .hero-title {
