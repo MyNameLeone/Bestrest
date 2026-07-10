@@ -992,19 +992,21 @@ body::after {
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0;
     margin: 0 auto;
     font-family: var(--font-sans);
     font-size: 0.6rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(26, 22, 20, 0.45);
+    color: #000;
     pointer-events: none;
     white-space: nowrap;
     z-index: 5;
     flex-shrink: 0;
-    width: auto;
+    width: 180px;
+    background: rgba(245, 240, 232, 0.6);
+    border-radius: 4px;
 }
 
 .swipe-arrow {
