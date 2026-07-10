@@ -437,7 +437,6 @@ body::after {
     align-items: center;
     justify-content: center;
     background: transparent;
-    overflow: hidden;
 }
 
 /* ============================================
@@ -1223,10 +1222,11 @@ body::after {
 
     .pages-container {
         max-width: 92%;
-        height: 80vh;
+        height: 75vh;
         max-height: unset;
         padding: 0.5rem 0.8rem;
         margin: 0 auto;
+        flex-shrink: 1;
     }
 
     .page-inner {
